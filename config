@@ -152,25 +152,7 @@ bindsym $mod+r mode "resize"
 # is used in the bar {} block below.
 # choose your font
 
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# font -misc-fixed-bold-r-normal-*-15-140-75-75-c-90-iso10646-1
-# font pango:DejaVu Sans Mono 12
-# font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
-# font pango:Droid Sans Mono Dotted 12
-# font pango:hermit 12
-# font pango:Inconsolata 15
-# font pango:monospace 12
-# font pango:SourceCodePro-SemiBold 11
-# font pango:Source Code Pro for Powerline, FontAwesome Regular, Icons 9
-# font pango:Terminus 14px
-  font pango:UbuntuMono-regular 12
-# from ttf-chromeos-fonts
-# font pango:Cousine 13
-# font pango:Arimo 11
-# font pango:Sans 13
-# font pango:Noto Mono Regular 13
-# font pango:DroidSansMono 13
-# font pango:Noto Mono Regular 13
+font pango:UbuntuMono-regular 12
 
 
 # Set terminal
@@ -361,30 +343,30 @@ mode "$mode_system" {
 #exec "amixer -D pulse sset Master '50%'" && pkill -RTMIN+11 i3blocks
 
 #Volume
-bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master '5%+'" && pkill -RTMIN+11 i3blocks
-bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master '5%-'" && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master '5%+' && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master '5%-' && pkill -RTMIN+11 i3blocks
 
 bindsym Shift+KP_Subtract exec amixer -q set Master '5%-' && pkill -RTMIN+11 i3blocks
 bindsym Shift+KP_Add exec amixer -q set Master '5%+' && pkill -RTMIN+11 i3blocks
 
-bindsym XF86AudioMute exec "amixer -D pulse set Master toggle"
-bindsym Shift+KP_Multiply exec "amixer -D pulse set Master toggle"
+bindsym XF86AudioMute exec amixer -D pulse set Master toggle && pkill -RTMIN+11 i3blocks
+bindsym Shift+KP_Multiply exec amixer -D pulse set Master toggle && pkill -RTMIN+11 i3blocks
 
 #Player controls
 
-bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym Shift+KP_5 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym Shift+KP_5 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym Shift+KP_6 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym Shift+KP_6 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym Shift+KP_4 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym Shift+KP_4 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
 
 
