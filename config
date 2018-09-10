@@ -352,7 +352,7 @@ bindsym XF86AudioMute exec amixer -D pulse set Master toggle && pkill -RTMIN+11 
 bindsym Shift+KP_Multiply exec amixer -D pulse set Master toggle && pkill -RTMIN+11 i3blocks
 
 #Player controls
-#added sleep because soemtimes script was "lost", it solved the problem
+#added sleep because sometimes script was too fast and than "lost", it solved the problem
 
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
