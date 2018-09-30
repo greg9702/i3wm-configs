@@ -77,7 +77,7 @@ bindsym $mod+f fullscreen toggle
 
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggl
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 #bindsym $mod+q focus parent
@@ -111,10 +111,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym m resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -162,8 +162,8 @@ font pango:UbuntuMono-regular 12
 
 # personal preference for tuning the look
 #bindsym $mod+Return exec i3-sensible-terminal
-#bindsym $mod+Return exec terminator;focus
-bindsym $mod+Return exec gnome-terminal;focus
+bindsym $mod+Return exec terminator;focus
+#bindsym $mod+Return exec gnome-terminal;focus
 
 
 # Menu settings
@@ -286,9 +286,10 @@ focus_follows_mouse no
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
-#bindsym $mod+c exec gnome-terminal -e xed  ~/.config/i3/config
+
 bindsym $mod+e exec nemo
-bindsym $mod+g exec --no-startup-id google-chrome
+#bindsym $mod+e exec terminator -e ranger
+bindsym $mod+g exec google-chrome
 bindsym $mod+t exec gnome-terminal
 
 
@@ -301,6 +302,7 @@ bindsym $mod+Shift+Tab workspace prev
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+c exec terminator -e qalc
 
 # switch to workspace with urgent window automatically
 #for_window [urgent=latest] focus
@@ -332,7 +334,7 @@ mode "$mode_system" {
 }
 
 
-# Audio - needs correct
+# Audio 
 
 #exec "amixer -D pulse sset Master '50%'" && pkill -RTMIN+11 i3blocks
 
@@ -387,12 +389,6 @@ for_window [class="^.*"] border pixel 1
 #new_float 1pixel
 
 
-# Unclutter
-
-#problem here: when mouse dissapears - focus window where cursor was
-# get the mouse out of the way with unclutter - hides mouse
-# exec unclutter
-
 # Bar apperance
 
 bar {
@@ -405,7 +401,7 @@ bar {
 	height 21
 
     position top
-    separator_symbol "〈"
+    separator_symbol "|"#"〈"
     colors {
             background #000000
             statusline #eeeeee
