@@ -17,7 +17,7 @@ compton <br />
 
 and i3gaps <br />
 https://github.com/Airblader/i3/wiki/Compiling-&-Installing
-without this, there is problem with memory leak
+without this, there is a memory leak bug
 
 # i3.config
 
