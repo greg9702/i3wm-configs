@@ -1,7 +1,7 @@
 # i3wm_configs
 My i3 windows manager configuration files
 for Linux Mint 18.3 <br />
-location of the folder i3blocks: /usr/share/
+
 
 # i3.config
 
@@ -17,4 +17,6 @@ Pause = PAUSE key  <br />
 Print = PRINT key  <br />
 Tab = TAB key  <br />
 
+# i3blocks
 
+location: /usr/share/i3blocks
