@@ -2,6 +2,21 @@
 My i3 windows manager configuration files
 for Linux Mint 18.3 <br />
 
+# Packages to install
+
+i3 <br />
+i3-wm <br />
+i3lock <br />
+suckless-tools <br />
+i3blocks <br />
+i3status <br />
+feh <br />
+lxappearance <br />
+scrot <br />
+compton <br />
+
+and i3gaps <br />
+https://github.com/Airblader/i3/wiki/Compiling-&-Installing
 
 # i3.config
 
