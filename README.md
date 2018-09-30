@@ -7,14 +7,14 @@ location of the folder i3blocks: /usr/share/
 
 KEY DEFINITIONS
 
-# $Mod = WINDOWS key or Super key or Mod4
-# mod = ALT key
-# Control = CTRL key
-# Shift = SHIFT key
-# Escape = ESCAPE key
-# Return = ENTER or RETURN key
-# Pause = PAUSE key
-# Print = PRINT key
-# Tab = TAB key
+$Mod = WINDOWS key or Super key or Mod4
+mod = ALT key
+Control = CTRL key
+Shift = SHIFT key
+Escape = ESCAPE key
+Return = ENTER or RETURN key
+Pause = PAUSE key
+Print = PRINT key
+Tab = TAB key
 
 
