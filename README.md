@@ -1,6 +1,8 @@
 # i3wm_configs
 My i3 windows manager configuration files
 for Linux Mint 18.3 <br />
+copy i3 folder to ~/.config <br />
+and i3blocks folder to /usr/share <br />
 
 # Packages to install
 
@@ -39,7 +41,3 @@ Font for window titles. Will also be used by the bar unless a different font <br
 is used in the bar {} block below. <br />
 choose your font <br />
 
-
-# i3blocks
-
-location: /usr/share/i3blocks
