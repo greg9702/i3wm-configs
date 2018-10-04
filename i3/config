@@ -21,15 +21,15 @@ set $mod Mod4
 
 # Set terminal
 
-bindsym $mod+Return exec terminator;focus
 set $term = terminator
+bindsym $mod+Return             exec $term;focus
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
 # Stop a program
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+q            kill
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -39,25 +39,25 @@ bindsym $mod+Shift+q kill
 floating_modifier $mod
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space        floating toggle
 
 # focus change
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+h                  focus left
+bindsym $mod+j                  focus down
+bindsym $mod+k                  focus up
+bindsym $mod+l                  focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left               focus left
+bindsym $mod+Down               focus down
+bindsym $mod+Up                 focus up
+bindsym $mod+Right              focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h            move left
+bindsym $mod+Shift+j            move down
+bindsym $mod+Shift+k            move up
+bindsym $mod+Shift+l            move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -73,28 +73,28 @@ bindsym $mod+Shift+Right move right
 default_orientation horizontal
 
 # split in horizontal orientation
-bindsym $mod+b split h
+bindsym $mod+b                  split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v s                plit v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f                  fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
-#bindsym $mod+z layout tabbed
-#bindsym $mod+e layout toggle split
+#bindsym $mod+s                 layout stacking
+#bindsym $mod+z                 layout tabbed
+#bindsym $mod+e                 layout toggle split
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+space              focus mode_toggle
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
 # Menu settings
 
 # set dmenu
-bindsym $mod+d exec dmenu_run -fn 'UbuntuMono-regular::pixelsize=18' -nb '#000000' -sb '#a9a9a9' -nf '#ffffff' -sf '#ffffff'
+bindsym $mod+d                  exec dmenu_run -fn 'UbuntuMono-regular::pixelsize=18' -nb '#000000' -sb '#a9a9a9' -nf '#ffffff' -sf '#ffffff'    
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -112,40 +112,39 @@ set $ws9 " 9 "
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+1          workspace $ws1
+bindsym $mod+2          workspace $ws2
+bindsym $mod+3          workspace $ws3
+bindsym $mod+4          workspace $ws4
+bindsym $mod+5          workspace $ws5
+bindsym $mod+6          workspace $ws6
+bindsym $mod+7          workspace $ws7
+bindsym $mod+8          workspace $ws8
+bindsym $mod+9          workspace $ws9
+bindsym $mod+0          workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+1    move container to workspace $ws1
+bindsym $mod+Shift+2    move container to workspace $ws2
+bindsym $mod+Shift+3    move container to workspace $ws3
+bindsym $mod+Shift+4    move container to workspace $ws4
+bindsym $mod+Shift+5    move container to workspace $ws5
+bindsym $mod+Shift+6    move container to workspace $ws6
+bindsym $mod+Shift+7    move container to workspace $ws7
+bindsym $mod+Shift+8    move container to workspace $ws8
+bindsym $mod+Shift+9    move container to workspace $ws9
+bindsym $mod+Shift+0    move container to workspace $ws10
 
 # move between workspaces
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab                workspace next
+bindsym $mod+Shift+Tab          workspace prev
 
-#navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
-bindsym $mod+c exec terminator -e qalc
+# navigate workspaces next / previous
+bindsym $mod+Ctrl+Right         workspace next
+bindsym $mod+Ctrl+Left          workspace prev
 
-# switch to workspace with urgent window automatically
-#for_window [urgent=latest] focus
+# focus parent 
+bindsym $mod+q                  focus parent
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -159,7 +158,7 @@ exec --no-startup-id feh --bg-scale ~/.config/i3/Wallpeper/black.jpg
 
 # Border control
 hide_edge_borders both
-bindsym $mod+shift+b exec i3-msg border toggle
+bindsym $mod+shift+b            exec i3-msg border toggle
 
 #this "hides" title bar
 for_window [class="^.*"] border pixel 1
@@ -170,33 +169,8 @@ set $secondMonitor HDMI1-I-1
 xrandr --output HDMI1 --auto --left-of LVDS1
 exec --no-startup-id xrandr --output HDMI1 --auto --left-of LVDS1
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
-
-~~~~~~~~~~~~~~~~~~~~~~
-
-# Bar apperance
-
-bar {
-     
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-
-	height 21
-    position top
-    separator_symbol "|"
-
-    colors {
-            background #000000
-            statusline #eeeeee
-
-            #default
-            #                     border  backgr. text
-            focused_workspace     #000000 #000000 #ffffff
-            active_workspace      #000000 #000000 #4d4d4d
-            inactive_workspace    #000000 #000000 #4d4d4d
-            urgent_workspace      #000000 #000000 #ff0000
-            }
-    }
+bindsym XF86MonBrightnessUp     exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown   exec xbacklight -dec 10 # decrease screen brightness
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -262,14 +236,15 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+End mode "$mode_system"
+
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id ~/.config/i3/i3exit.sh lock, mode "default"
-    bindsym e exec --no-startup-id ~/.config/i3/i3exit.sh logout, mode "default"
-    bindsym s exec --no-startup-id ~/.config/i3/i3exit.sh suspend, mode "default"
-    bindsym h exec --no-startup-id ~/.config/i3/i3exit.sh hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/.config/i3/i3exit.sh reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id ~/.config/i3/i3exit.sh shutdown, mode "default"
+    bindsym l               exec --no-startup-id ~/.config/i3/i3exit.sh lock, mode "default"
+    bindsym e               exec --no-startup-id ~/.config/i3/i3exit.sh logout, mode "default"
+    bindsym s               exec --no-startup-id ~/.config/i3/i3exit.sh suspend, mode "default"
+    bindsym h               exec --no-startup-id ~/.config/i3/i3exit.sh hibernate, mode "default"
+    bindsym r               exec --no-startup-id ~/.config/i3/i3exit.sh reboot, mode "default"
+    bindsym Shift+s         exec --no-startup-id ~/.config/i3/i3exit.sh shutdown, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -281,46 +256,48 @@ mode "$mode_system" {
 # Audio control
 
 #Volume
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master '5%+' && pkill -RTMIN+11 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master '5%-' && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioRaiseVolume    exec amixer -D pulse sset Master '5%+' && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioLowerVolume    exec amixer -D pulse sset Master '5%-' && pkill -RTMIN+11 i3blocks
 
-bindsym Shift+KP_Subtract exec amixer -q set Master '5%-' && pkill -RTMIN+11 i3blocks
-bindsym Shift+KP_Add exec amixer -q set Master '5%+' && pkill -RTMIN+11 i3blocks
+bindsym Shift+KP_Subtract       exec amixer -q set Master '5%-' && pkill -RTMIN+11 i3blocks
+bindsym Shift+KP_Add            exec amixer -q set Master '5%+' && pkill -RTMIN+11 i3blocks
 
-bindsym XF86AudioMute exec amixer -D pulse set Master toggle && pkill -RTMIN+11 i3blocks
-bindsym Shift+KP_Multiply exec amixer -D pulse set Master toggle && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioMute           exec amixer -D pulse set Master toggle && pkill -RTMIN+11 i3blocks
+bindsym Shift+KP_Multiply       exec amixer -D pulse set Master toggle && pkill -RTMIN+11 i3blocks
 
 #Spotify player controls
+bindsym XF86AudioPlay           exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause && sleep 0.1 && pkill -RTMIN+12 i3blocks"
+bindsym Shift+KP_5              exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym Shift+KP_5 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
+bindsym XF86AudioNext           exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
+bindsym Shift+KP_6              exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym Shift+KP_6 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
+bindsym XF86AudioPrev           exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
+bindsym Shift+KP_4              exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
-bindsym Shift+KP_4 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
-
-bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
+bindsym XF86AudioStop           exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
 # Shortcuts
 
-bindsym $mod+e exec nemo
-bindsym $mod+g exec google-chrome
-bindsym $mod+c exec $term -e qalc
+bindsym $mod+e              exec nemo
+bindsym $mod+g              exec google-chrome
+bindsym $mod+c              exec $term -e qalc
+bindsym $mod+t              exec thunderbird
+bindsym $mod+p              exec xviewer ~/Documents/Studia/Rok\ III/Semestr\ V/planEITr03s05.png
+bindsym $mod+c              exec terminator -e qalc
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
 # Screenshots
 
-bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
-bindsym Control+Print exec gnome-screenshot -i
-#bindsym Shift+Print exec "scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'"
+bindsym Print               exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
+bindsym Control+Print       exec gnome-screenshot -i
+#bindsym Shift+Print        exec "scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'"
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -331,43 +308,50 @@ exec_always compton --config ~/.config/i3/compton.conf
 
 
 
+# Scratchpad
+
+exec --no-startup-id $term --class dropdown 
+
+bindsym $mod+a [class="^dropdown$"] scratchpad show
+
+for_window [class="^dropdown$"] floating enable
+for_window [class="^dropdown$"] move scratchpad 
+for_window [class="^dropdown$"] border pixel 0
+for_window [class="^dropdown$"] scratchpad show
 
 
+# set on bottom of main screen
+#for_window [class="^dropdown$"] move position 0px 680px
+#for_window [class="^dropdown$"] resize set 1920 400
 
+#set in center 
+bindsym $mod+Return [class="^dropdown$"] move scratchpad center
+for_window [class="^dropdown$"] move position center 
+for_window [class="^dropdown$"] resize set 1000 400
 
+~~~~~~~~~~~~~~~~~~~~~~
 
+# Bar apperance
 
+bar {
+     
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
+	height 21
+    position top
+    separator_symbol "|"
 
+    colors {
+            background #000000
+            statusline #eeeeee
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            #default
+            #                     border  backgr. text
+            focused_workspace     #000000 #000000 #ffffff
+            active_workspace      #000000 #000000 #4d4d4d
+            inactive_workspace    #000000 #000000 #4d4d4d
+            urgent_workspace      #000000 #000000 #ff0000
+            }
+    }
 
 
