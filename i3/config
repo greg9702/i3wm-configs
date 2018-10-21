@@ -337,7 +337,7 @@ for_window [class="^dropdown$"] resize set 1000 400
 
 # Python Server
 
-bindsym $mod+Shift+p              exec terminator -e ~/.config/i3/Python_Server_scripts/pythonServer.sh
+bindsym $mod+Shift+p              exec /home/greg9702/.config/i3/Python_Server_scripts/pythonServer.sh
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
