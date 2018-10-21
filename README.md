@@ -18,5 +18,5 @@ scrot <br />
 compton <br />
 
 and i3gaps <br />
-https://github.com/Airblader/i3/wiki/Compiling-&-Installing
-without this, there is a memory leak bug
+https://github.com/Airblader/i3/wiki/Compiling-&-Installing <br />
+need to do this to solve memory leak bug
