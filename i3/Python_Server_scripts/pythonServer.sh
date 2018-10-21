@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-status=$(python2 isup.py)
-cd ~/Server
+status=$(python2 /home/greg9702/.config/i3/Python_Server_scripts/isup.py)
 if [ $status -eq 1 ] ; then
-    server_pid=$(top -b -n 1 | grep python$ | awk '{print $1}')
-    kill -2 $server_pid
+  touch /tmp/abc2
+    server_pid=$(top -b -n 1 | grep [p]ython$ | awk '{print $1}')
+    kill -9 $server_pid
 else
-    python -m SimpleHTTPServer 8000
+    pushd /home/greg9702/Server; python -m SimpleHTTPServer 8000
 fi
