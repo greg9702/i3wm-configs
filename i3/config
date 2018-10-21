@@ -290,6 +290,7 @@ bindsym $mod+c              exec terminator -e qalc --class calc
 for_window [class="^calc$"] floating enable
 bindsym $mod+t              exec thunderbird
 bindsym $mod+p              exec xviewer ~/Documents/Studia/Rok\ III/Semestr\ V/planEITr03s05.png
+bindsym $mod+x              exec ~/Downloads/clion-2018.1.2/bin/clion.sh
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
