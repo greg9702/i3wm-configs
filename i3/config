@@ -9,6 +9,7 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+exec --no-startup-id ~/.config/i3/config
 ~~~~~~~~~~~~~~~~~~~~~~
 
 # Set mod key
@@ -331,6 +332,12 @@ for_window [class="^dropdown$"] scratchpad show
 #set in center 
 for_window [class="^dropdown$"] move position center 
 for_window [class="^dropdown$"] resize set 1000 400
+
+~~~~~~~~~~~~~~~~~~~~~~
+
+# Python Server
+
+bindsym $mod+Shift+p              exec terminator -e ~/.config/i3/Python_Server_scripts/pythonServer.sh
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
