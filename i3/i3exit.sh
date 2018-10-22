@@ -1,7 +1,7 @@
 #!/bin/sh
 lock() {
-    #i3lock -c 222222
-    IMAGE=/tmp/i3lock.png
+sleep 0.5 #do not screenshot exit menu
+IMAGE=/tmp/i3lock.png
 SCREENSHOT="scrot $IMAGE" # 0.46s
 
 # Alternate screenshot method with imagemagick. NOTE: it is much slower
