@@ -1,6 +1,6 @@
 #!/bin/sh
 lock() {
-sleep 0.5 #do not screenshot exit menu
+sleep 0.1 #do not screenshot exit menu
 IMAGE=/tmp/i3lock.png
 SCREENSHOT="scrot $IMAGE" # 0.46s
 
