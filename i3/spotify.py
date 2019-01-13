@@ -5,23 +5,23 @@ import os
 import sys
 
 
-def find_pause(tytul):
+def find_pause(title):
     i = 0;
-    napis = ""
-    for znak in tytul:
+    text = ""
+    for char in title:
         print i
-        if znak == "-":
+        if char == "-":
             break;
         else:
-            napis += znak
+            text += char
         i += 1
-    return napis
+    return text
 
 try:
     bus = dbus.SessionBus()
     spotify = bus.get_object("org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2")
-    
-    
+
+
 
  #   if os.environ.get('BLOCK_BUTTON'):
  #       control_iface = dbus.Interface(spotify, 'org.mpris.MediaPlayer2.Player')
@@ -31,28 +31,28 @@ try:
  #           control_iface.PlayPause()
  #       elif (os.environ['BLOCK_BUTTON'] == '3'):
  #           control_iface.Next()
-    
+
     spotify_iface = dbus.Interface(spotify, 'org.freedesktop.DBus.Properties')
     props = spotify_iface.Get('org.mpris.MediaPlayer2.Player', 'Metadata')
 
     if (sys.version_info > (3, 0)):
-        #napis = (str(props['xesam:artist'][0]) + " - " + find_pause(str(props['xesam:title'])))   
         #napis = (str(props['xesam:artist'][0]) + " - " + find_pause(str(props['xesam:title'])))
-        napis = (str(props['xesam:artist'][0]) + " - " + str(props['xesam:title'])) 
-        print napis[:40]
+        #napis = (str(props['xesam:artist'][0]) + " - " + find_pause(str(props['xesam:title'])))
+        text = (str(props['xesam:artist'][0]) + " - " + str(props['xesam:title']))
+        print text[:40]
 
     else:
         #napis = (str(props['xesam:artist'][0]) + " - " + str(props['xesam:title']))
         #napis = (props['xesam:artist'][0] + " - " + props['xesam:title']).encode('utf-8')
-        napis = (props['xesam:artist'][0] + " - " + props['xesam:title']).encode('utf-8')
-        print napis[:40]
-        
+        text = (props['xesam:artist'][0] + " - " + props['xesam:title']).encode('utf-8')
+        print text[:40]
+
     exit
 except dbus.exceptions.DBusException:
     exit
 
 
-#original 
+#original
 #    if (sys.version_info > (3, 0)):
 #        print(str(props['xesam:artist'][0]) + " - " + str(props['xesam:title']))
 #    else:
@@ -67,7 +67,7 @@ except dbus.exceptions.DBusException:
 #    props = spotify_iface.Get('org.mpris.MediaPlayer2.Player', 'Metadata')
 #
 #    if (sys.version_info > (3, 0)):
-#        napis = (str(props['xesam:artist'][0]) + " - " + str(props['xesam:title']))        
+#        napis = (str(props['xesam:artist'][0]) + " - " + str(props['xesam:title']))
 #        print napis[:40]
 #    else:
 #        napis = (props['xesam:artist'][0] + " - " + props['xesam:title']).encode#('utf-8')
@@ -75,5 +75,3 @@ except dbus.exceptions.DBusException:
 #    exit
 #except dbus.exceptions.DBusException:
 #    exit
-
-
