@@ -1,27 +1,12 @@
 #!/usr/bin/python
-
+# -*- coding: utf-8 -*-
 import dbus
 import os
 import sys
 
-
-def find_pause(title):
-    i = 0;
-    text = ""
-    for char in title:
-        print i
-        if char == "-":
-            break;
-        else:
-            text += char
-        i += 1
-    return text
-
 try:
     bus = dbus.SessionBus()
     spotify = bus.get_object("org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2")
-
-
 
  #   if os.environ.get('BLOCK_BUTTON'):
  #       control_iface = dbus.Interface(spotify, 'org.mpris.MediaPlayer2.Player')
@@ -36,42 +21,13 @@ try:
     props = spotify_iface.Get('org.mpris.MediaPlayer2.Player', 'Metadata')
 
     if (sys.version_info > (3, 0)):
-        #napis = (str(props['xesam:artist'][0]) + " - " + find_pause(str(props['xesam:title'])))
-        #napis = (str(props['xesam:artist'][0]) + " - " + find_pause(str(props['xesam:title'])))
         text = (str(props['xesam:artist'][0]) + " - " + str(props['xesam:title']))
         print text[:40]
 
     else:
-        #napis = (str(props['xesam:artist'][0]) + " - " + str(props['xesam:title']))
-        #napis = (props['xesam:artist'][0] + " - " + props['xesam:title']).encode('utf-8')
         text = (props['xesam:artist'][0] + " - " + props['xesam:title']).encode('utf-8')
         print text[:40]
 
     exit
 except dbus.exceptions.DBusException:
     exit
-
-
-#original
-#    if (sys.version_info > (3, 0)):
-#        print(str(props['xesam:artist'][0]) + " - " + str(props['xesam:title']))
-#    else:
-#        print(props['xesam:artist'][0] + " - " + props['xesam:title']).encode#('utf-8')
-#    exit
-#except dbus.exceptions.DBusException:
- #   exit
-
-
-#my v1 - static number of characters cut
-#    spotify_iface = dbus.Interface(spotify, 'org.freedesktop.DBus.Properties')
-#    props = spotify_iface.Get('org.mpris.MediaPlayer2.Player', 'Metadata')
-#
-#    if (sys.version_info > (3, 0)):
-#        napis = (str(props['xesam:artist'][0]) + " - " + str(props['xesam:title']))
-#        print napis[:40]
-#    else:
-#        napis = (props['xesam:artist'][0] + " - " + props['xesam:title']).encode#('utf-8')
-#        print napis[:40]
-#    exit
-#except dbus.exceptions.DBusException:
-#    exit
