@@ -1,6 +1,8 @@
-# i3wm_configs
+# My i3wm_configs
 
 ### i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license.
+
+[i3 Homepage](https://i3wm.org/ "i3 Homepage")
 
 My i3 windows manager configuration files
 for Linux Mint 18.3 <br />
