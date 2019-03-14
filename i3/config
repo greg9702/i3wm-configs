@@ -95,7 +95,8 @@ bindsym $mod+space              focus mode_toggle
 # Menu settings
 
 # set dmenu
-bindsym $mod+d                  exec dmenu_run -fn 'UbuntuMono-regular::pixelsize=18' -nb '#000000' -sb '#a9a9a9' -nf '#ffffff' -sf '#ffffff'    
+bindsym $mod+d                  exec dmenu_run -fn 'UbuntuMono-regular::pixelsize=18' -nb '#000000' -sb '#a9a9a9' -nf '#ffffff' -sf '#ffffff'
+bindsym $mod+Shift+d            exec ~/.scripts/dmenuunicode.sh
 
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -144,7 +145,7 @@ bindsym $mod+Shift+Tab          workspace prev
 bindsym $mod+Ctrl+Right         workspace next
 bindsym $mod+Ctrl+Left          workspace prev
 
-# focus parent 
+# focus parent
 bindsym $mod+q                  focus parent
 
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -164,7 +165,7 @@ bindsym $mod+shift+b            exec i3-msg border toggle
 #this "hides" title bar
 for_window [class="^.*"] border pixel 1
 
-# set monitor 
+# set monitor
 set $firstMonitor VLDS1-I-2
 set $secondMonitor HDMI1-I-1
 xrandr --output HDMI1 --auto --left-of LVDS1
@@ -313,16 +314,16 @@ exec_always compton --config ~/.config/i3/compton.conf
 
 # Scratchpad
 
-exec --no-startup-id terminator --class dropdown 
+exec --no-startup-id terminator --class dropdown
 
 bindsym $mod+a [class="^dropdown$"] scratchpad show
-bindsym $mod+a [class="^dropdown$"] move position center 
+bindsym $mod+a [class="^dropdown$"] move position center
 
 # restart dropdown terminal
-bindsym $mod+Shift+a        exec terminator --class dropdown 
+bindsym $mod+Shift+a        exec terminator --class dropdown
 
 for_window [class="^dropdown$"] floating enable
-for_window [class="^dropdown$"] move scratchpad 
+for_window [class="^dropdown$"] move scratchpad
 for_window [class="^dropdown$"] border pixel 0
 for_window [class="^dropdown$"] scratchpad show
 
@@ -330,8 +331,8 @@ for_window [class="^dropdown$"] scratchpad show
 #for_window [class="^dropdown$"] move position 0px 680px
 #for_window [class="^dropdown$"] resize set 1920 400
 
-#set in center 
-for_window [class="^dropdown$"] move position center 
+#set in center
+for_window [class="^dropdown$"] move position center
 for_window [class="^dropdown$"] resize set 1000 400
 
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -345,7 +346,7 @@ bindsym $mod+Shift+p              exec /home/greg9702/.config/i3/Python_Server_s
 # Bar apperance
 
 bar {
-     
+
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
 	height 21
@@ -364,5 +365,4 @@ bar {
             urgent_workspace      #000000 #000000 #ff0000
             }
     }
-
-
+for_window [title="RPG$"] floating enable
