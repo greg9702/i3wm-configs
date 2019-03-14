@@ -1,7 +1,9 @@
-## __My i3wm_configs__
-
-###### My i3 windows manager configuration files
-> i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. [i3 Homepage](https://i3wm.org/ "i3 Homepage")
+### __My i3 windows manager configuration files__
+___
+> i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license.
+I also use i3blocks as status bar.<br>
+[i3 Homepage](https://i3wm.org/ "i3 Homepage") <br>
+[i3Blocks](https://github.com/vivien/i3blocks "I3Blocks")
 
 #### Installation
 
@@ -21,6 +23,6 @@ lxappearance <br />
 scrot <br />
 compton <br />
 
-###### i3gaps <br />
+#### i3gaps <br />
 >Need to do this to solve memory leak bug <br>
 https://github.com/Airblader/i3/wiki/Compiling-&-Installing <br>
