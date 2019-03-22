@@ -194,7 +194,7 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = " %d.%m.%Y"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -209,7 +209,7 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
 label-muted = "       muted       "
