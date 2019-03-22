@@ -6,6 +6,12 @@ I also use Polybar as status bar.<br>
 [i3 Homepage](https://i3wm.org/ "i3 Homepage") <br>
 [Polybar](https://github.com/jaagr/polybar "Polybar")
 
+#### Desktop view
+<br/>
+<p>
+    <img src="/Screenshots/desktop_ss.png" width="960" height="540" />
+</p>
+
 #### Installation
 
 > I'm using Linux Mint 18.3 <br />
