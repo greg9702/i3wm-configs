@@ -1,9 +1,10 @@
 ### __My i3 windows manager configuration files__
 ___
 > i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license.
-I also use i3blocks as status bar.<br>
+I also use Polybar as status bar.<br>
+
 [i3 Homepage](https://i3wm.org/ "i3 Homepage") <br>
-[i3Blocks](https://github.com/vivien/i3blocks "I3Blocks")
+[Polybar](https://github.com/jaagr/polybar "Polybar")
 
 #### Installation
 

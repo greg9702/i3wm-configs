@@ -258,26 +258,23 @@ mode "$mode_system" {
 # Audio control
 
 #Volume
-bindsym XF86AudioRaiseVolume    exec amixer -D pulse set Master '5%+' && pkill -RTMIN+11 i3blocks
-bindsym XF86AudioLowerVolume    exec amixer -D pulse set Master '5%-' && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioRaiseVolume    exec amixer -D pulse set Master '5%+'
+bindsym XF86AudioLowerVolume    exec amixer -D pulse set Master '5%-'
 
-bindsym Shift+KP_Subtract       exec amixer -q set Master '5%-' && pkill -RTMIN+11 i3blocks
-bindsym Shift+KP_Add            exec amixer -q set Master '5%+' && pkill -RTMIN+11 i3blocks
+bindsym Shift+KP_Add            exec amixer -D pulse set Master '5%+'
+bindsym Shift+KP_Subtract       exec amixer -D pulse set Master '5%-'
 
-bindsym XF86AudioMute           exec amixer -D pulse set Master toggle && pkill -RTMIN+11 i3blocks
-bindsym Shift+KP_Multiply       exec amixer -D pulse set Master toggle && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioMute           exec amixer -D pulse set Master toggle
+bindsym Shift+KP_Multiply       exec amixer -D pulse set Master toggle
 
 #Spotify player controls
 bindsym XF86AudioPlay           exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause && sleep 0.1 && pkill -RTMIN+12 i3blocks"
-
 bindsym Shift+KP_5              exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
 bindsym XF86AudioNext           exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
-
 bindsym Shift+KP_6              exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
 bindsym XF86AudioPrev           exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
-
 bindsym Shift+KP_4              exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
 
 bindsym XF86AudioStop           exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop  && sleep 0.1 && pkill -RTMIN+12 i3blocks"
@@ -345,24 +342,6 @@ bindsym $mod+Shift+p              exec /home/greg9702/.config/i3/Python_Server_s
 
 # Bar apperance
 
-bar {
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-
-	height 21
-    position top
-    separator_symbol "|"
-
-    colors {
-            background #000000
-            statusline #eeeeee
-
-            #default
-            #                     border  backgr. text
-            focused_workspace     #000000 #000000 #ffffff
-            active_workspace      #000000 #000000 #4d4d4d
-            inactive_workspace    #000000 #000000 #4d4d4d
-            urgent_workspace      #000000 #000000 #ff0000
-            }
-    }
 for_window [title="RPG$"] floating enable
