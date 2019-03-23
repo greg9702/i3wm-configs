@@ -14,11 +14,10 @@ I also use Polybar as status bar.<br>
 
 #### Installation
 
-> I'm using Linux Mint 18.3 <br />
-copy *i3* folder to ~/.config <br />
+>Copy *i3* folder to ~/.config <br />
 and *i3blocks* folder to /usr/share <br />
 
-#### Dependences
+#### i3 Dependences
 > i3 <br />
 i3-wm <br />
 i3lock <br />
