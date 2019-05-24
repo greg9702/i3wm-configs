@@ -1,0 +1,18 @@
+# Packages to install
+
+i3
+i3-wm 
+i3lock 
+suckless-tools
+i3blocks 
+i3status
+numlockx
+feh
+lxappearance
+scrot
+compton
+
+https://github.com/Airblader/i3/wiki/Compiling-&-Installing
+i3 gaps na koncu to walnca
+
+
