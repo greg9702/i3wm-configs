@@ -129,7 +129,8 @@ bindsym $mod+Ctrl+Left          workspace prev
 font pango:UbuntuMono-regular 12
 
 # set wallpeper
-exec --no-startup-id feh --bg-scale $HOME/.config/i3/Wallpeper/black.jpg
+#exec --no-startup-id feh --bg-scale $HOME/.config/i3/Wallpeper/black.jpg
+exec --no-startup-id feh --bg-scale $HOME/Pictures/archwall.png
 
 # Border control
 hide_edge_borders both
@@ -258,7 +259,7 @@ bindsym XF86AudioStop           exec "dbus-send --print-reply --dest=org.mpris.M
 
 # Shortcuts
 
-bindsym $mod+e              exec terminator -e "ranger ~"
+bindsym $mod+e              exec termite -e "ranger"
 bindsym $mod+g              exec google-chrome-stable
 bindsym $mod+w              exec ~/.config/i3/wifi_handler.sh
 bindsym $mod+c              exec $term --class=calc -e qalc
@@ -308,6 +309,10 @@ for_window [class="dropdown"] move position center
 bindsym $mod+Shift+p              exec $HOME/.config/i3/Python_Server_scripts/pythonServer.sh
 
 
+# Keypass
+
+bindsym $mod+p              exec keepassxc
+
 # Bar apperance
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -315,3 +320,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 for_window [title="RPG$"] floating enable
 for_window [title="calculator$"] floating enable
 for_window [title="^feh"] floating enable
+for_window [title="^LearnOpenGL"] floating enable
+
+exec --no-startup-id $HOME/.config/i3/scripts/compton.sh
