@@ -58,3 +58,16 @@ set number
 
 set tabstop=4
 set mouse=a
+set expandtab
+
+
+if has("gui_running")
+    nnoremap <C-S-n> :tabnew<CR> 
+    nnoremap <C-S-Tab> :tabprevious<CR> 
+    nnoremap <C-Tab> :tabnext<CR>
+    nnoremap <C-W> :tabclose<CR>
+
+    colorscheme slate
+    set guioptions -=T
+endif
+
