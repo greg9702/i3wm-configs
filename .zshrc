@@ -106,3 +106,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export DOTNET_ROOT=/opt/dotnet
+source /usr/share/fzf/key-bindings.zsh
+
+
+PATH=$PATH:~/.local/bin
