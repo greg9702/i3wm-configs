@@ -49,9 +49,9 @@ endif
 "set mouse=a		" Enable mouse usage (all modes)
 
 " Source a global configuration file if available
-"set ctrl+a and ctrl+e to move between 
+"set ctrl+a and ctrl+e to move between
 inoremap <C-e> <Esc>A
-inoremap <C-a> <Esc>I 
+inoremap <C-a> <Esc>I
 
 "show number line
 set number
@@ -62,12 +62,11 @@ set expandtab
 
 
 if has("gui_running")
-    nnoremap <C-S-n> :tabnew<CR> 
-    nnoremap <C-S-Tab> :tabprevious<CR> 
+    nnoremap <C-t> :tabnew<CR>
+    nnoremap <C-S-Tab> :tabprevious<CR>
     nnoremap <C-Tab> :tabnext<CR>
     nnoremap <C-W> :tabclose<CR>
 
-    colorscheme slate
+    colorscheme torte
     set guioptions -=T
 endif
-
