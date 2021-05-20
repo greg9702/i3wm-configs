@@ -3,7 +3,8 @@
 
 # Vim alias
 alias vi="vim"
-
+export COUNTRY=PL
+export DOTNET_ROOT=~/.bin/dotnet
 
 # Execute tmux
 if command -v tmux>/dev/null; then
@@ -12,7 +13,7 @@ if command -v tmux>/dev/null; then
 fi
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/greg9702/.oh-my-zsh"
+export ZSH="/home/greg9702/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -107,7 +108,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export DOTNET_ROOT=/opt/dotnet
 source /usr/share/fzf/key-bindings.zsh
 
 
