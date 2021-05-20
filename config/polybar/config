@@ -18,7 +18,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+;background = #222
+background = #000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -55,13 +56,14 @@ module-margin-right = 1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = "Noto Color Emoji:pixelsize=10;1"
 
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:pixelsize=10;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-2 = siji:pixelsize=10;2
+font-3 = NotoEmoji:scale=10;2
 
 modules-left = i3
 
-modules-right = wifi_signal pulseaudio cpu memory wlan  eth battery temperature date
+modules-right = spotify pulseaudio mic cpu memory wlan temperature date
 tray-position = right
 tray-padding = 2
 
@@ -69,6 +71,20 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 cursor-click = pointer
+
+[module/mic]
+type = custom/script
+label =  🎙️ %output:3%
+exec = $HOME/.config/i3/scripts/mic_status.sh
+tail = true
+interval = 0.5
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python $HOME/.config/polybar/spotify_polybar.py -f '{play_pause} {artist} - {song}'
 
 [module/filesystem]
 type = internal/fs
@@ -144,20 +160,20 @@ type = internal/cpu
 interval = 2
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage:2%%
+# format-underline = #4bffdc
+label = 💻 %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = %percentage_used%%
+# format-underline = #f90000
+label = 💾 %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp8s0
+interface = wlp5s0
 interval = 3.0
 
 ;format-connected = <label-connected> <ramp-signal>
@@ -202,28 +218,32 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+# format-underline = #0a6cf5
 
-label = %date% %time%
+label = 🕒 %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = 🔊 
 label-volume-foreground = ${root.foreground}
 
-label-muted = "       muted       "
+label-muted = "🔇"
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 5
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-3 = #FFFF55
+bar-volume-foreground-4 = #FFFF55
 bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-6 = #f5a70a
+bar-volume-foreground-7 = #f5a70a
+bar-volume-foreground-8 = #ff5555
+bar-volume-foreground-9 = #ff5555
+bar-volume-foreground-10 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
