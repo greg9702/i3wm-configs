@@ -1,3 +1,4 @@
+
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
 " the call to :runtime you can find below.  If you wish to change any of those
 " settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
@@ -69,3 +70,19 @@ if has("gui_running")
     colorscheme torte
     set guioptions -=T
 endif
+
+set splitright
+let g:netrw_banner = 0
+let g:netrw_liststyle = 0
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 15
+" augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Lex
+" augroup END
+
+set noswapfile
+
+autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
+autocmd VimLeave * call system("tmux rename-window zsh")
