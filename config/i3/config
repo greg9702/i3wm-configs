@@ -87,7 +87,8 @@ bindsym $mod+space              focus mode_toggle
 # Menu settings
 
 # set dmenu
-bindsym $mod+d                  exec dmenu_run -fn 'UbuntuMono-regular::pixelsize=16' -nb '#000000' -sb '#000000' -nf '#ffffff' -sf '#ffb52a'
+#bindsym $mod+d                  exec dmenu_run -fn 'UbuntuMono-regular::pixelsize=16' -nb '#000000' -sb '#000000' -nf '#ffffff' -sf '#ffb52a'
+bindsym $mod+d                  exec rofi -combi-modi drun -font "hack 10" -show combi -icon-theme "Papirus" -show-icons
 
 # Workspaces
 
@@ -129,7 +130,7 @@ bindsym $mod+Ctrl+Left          workspace prev
 font pango:UbuntuMono-regular 12
 
 # set wallpeper
-exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/wallpeper.jpg
+exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/black.jpg
 #exec --no-startup-id feh --bg-scale $HOME/Pictures/archwall.png
 
 # Border control
@@ -178,7 +179,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Resize windows
 
@@ -264,7 +265,7 @@ bindsym $mod+g              exec google-chrome-stable
 bindsym $mod+w              exec ~/.config/i3/wifi_handler.sh
 for_window [class="^calc$"] floating enable
 bindsym $mod+t workspace 9; exec thunderbird
-bindsym $mod+s workspace 10;exec spotify -s
+# bindsym $mod+s workspace 10;exec spotify -s
 
 # Screenshots
 
@@ -326,6 +327,7 @@ for_window [title="^Volume Control*"] floating enable
 for_window [title="^GraphStream*"] floating enable
 for_window [title="^Robocode*"] floating enable
 for_window [title="^Rhythmbox"] floating enable
+for_window [title="^Write"] floating enable
 
 exec --no-startup-id $HOME/.config/i3/scripts/compton.sh
 exec --no-startup-id $HOME/.config/i3/scripts/bt_speakers.sh
